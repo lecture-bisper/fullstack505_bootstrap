@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부트스트랩 5일차 1번</title>
+
+  <link rel="stylesheet" href="../resource/css/bootstrap.css">
+  <script src="../resource/js/bootstrap.bundle.js"></script>
+
+  <style>
+    body {
+      height: 1500px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid mt-3">
+    <br>
+    <h3>Sticky Navbar</h3>
+    <p>네비게이션 바가 처음에는 중간에 위치하고 있다가 마우스 휠을 돌려서 화면이 아래로 내려가면 네비게이션 바의 위치가 상단에 고정되는 네비게이션 바</p>
+    <p>구형 브라우저에서는 동작되지 않을 수 있음</p>
+    <p>nav 태그에 .sticky-top 클래스를 추가하여 사용</p>
+  </div>
+  
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">Logo</a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container my-4">
+    <h3>네비게이션 바 아래에 존재하는 컨텐츠 영역</h3>
+    <p>영역을 표시하기 위한 단순 글자.</p>
+    <p>영역을 표시하기 위한 단순 글자.</p>
+    <p>영역을 표시하기 위한 단순 글자.</p>
+    <p>영역을 표시하기 위한 단순 글자.</p>
+    <p>영역을 표시하기 위한 단순 글자.</p>
+    <p>영역을 표시하기 위한 단순 글자.</p>
+    <p>영역을 표시하기 위한 단순 글자.</p>
+  </main>
+
+  <br><hr><br>
+
+  <div class="container my-4">
+    <h3>캐러셀</h3>
+    <!-- Carousel : 이미지를 슬라이드 시키는 기술 -->
+    <!-- 많은 캐러셀 라이브러리가 존재하지만 부트스트랩에서 간단한 형식의 캐러셀을 사용할 수 있음 -->
+    <!-- 부모 태그로 div를 사용하고 id값을 반드시 설정하고, .carousel, .slide 클래스를 사용함 -->
+    <!-- 부모 div 태그에 사용자 속성인 data-bs-ride="carousel" 을 추가함 -->
+
+    <!-- 자식 태그로 3가지 영역을 사용함 -->
+    <!-- indicator 영역 -->
+    <!-- 부모 태그로 div 태그를 사용하고, .carousel-indicators 사용함 -->
+    <!-- 자식 태그로 button 태그를 사용하고, 사용자 속성인 data-bs-target="#캐러셀의 최상위 부모의 id값", data-bs-slide-to="번호"를 입력하여 사용 -->
+    <!-- data-bs-slide-to의 번호는 0부터 사용하고 slideshow 영역의 이미지 개수와 맞춰야함 -->
+    <!-- 처음에 보여줄 이미지와 연동되는 버튼에 .active 클래스를 사용함 -->
+
+    <!-- slideshow 영역 -->
+    <!-- 부모 태그로 div 태그를 사용하고 .carousel-inner 클래스를 사용함 -->
+    <!-- 자식 태그로 div 태그를 사용하고 .carousel-item 클래스를 사용하며, 처음에 표시되는 부분에는 .active 클래스를 추가함 -->
+    <!-- 자식 태그인 div의 자식 태그로 img 태그를 사용하고 .d-block, .w-100 을 사용하여 화면에 표시되는 이미지를 출력함 -->
+
+    <!-- control 영역 -->
+    <!-- button 태그를 사용하고 .carousel-control-prev 혹은 .carousel-control-next를 사용함 -->
+    <!-- button 태그에 사용자 속성인 data-bs-target="#캐러셀의 최상위 부모의 id값", data-bs-slide="prev" 나 data-bs-slide="next" 로 설정함 -->
+    <!-- button 태그의 자식 태그로 span 태그를 사용하고 .carousel-control-prev-icon 혹은 .carousel-control-next-icon 을 사용함 -->
+
+    <div id="mycarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- 인디케이터 -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- 슬라이드쇼 -->
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+          <img src="../resource/images/la.jpg" alt="" class="d-block w-100">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="../resource/images/ny.jpg" alt="" class="d-block w-100">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="../resource/images/chicago.jpg" alt="" class="d-block w-100">
+        </div>
+      </div>
+
+      <!-- 컨트롤 -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#mycarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mycarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <br>
+
+    <h4>캐러셀이 캡션 넣기</h4>
+    <!-- 슬라이드쇼 영역의 carousel-item 의 자식 태그로 div 태그를 추가하고 .carousel-caption 클래스를 사용 -->
+    <!-- 해당 태그의 자식 태그로 문자를 표현하는 태그를 사용 -->
+    <!-- carousel-item에 사용자 속성 data-bs-interval="시간" 을 사용하여 슬라이드 시간을 조절할 수 있음 -->
+    <!-- 기본값은 5초, 1/1000 초로 계산함 -->
+    <!-- 부모인 div에 .carousel-fade 를 추가하면 fade in/fade out 방식으로 이미지를 변경함 -->
+
+    <div id="mycarousel2" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <!-- 인디케이터 -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#mycarousel2" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#mycarousel2" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#mycarousel2" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- 슬라이드쇼 -->
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+          <img src="../resource/images/la.jpg" alt="" class="d-block w-100">
+          <div class="carousel-caption">
+            <h4>첫번째 이미지</h4>
+            <p>캐러셀의 첫번째 이미지에 사용된 설명문</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="../resource/images/ny.jpg" alt="" class="d-block w-100">
+          <div class="carousel-caption">
+            <h4>두번째 이미지</h4>
+            <p>캐러셀의 두번째 이미지에 사용된 설명문</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="../resource/images/chicago.jpg" alt="" class="d-block w-100">
+          <div class="carousel-caption">
+            <h4>세번째 이미지</h4>
+            <p>캐러셀의 세번째 이미지에 사용된 설명문</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 컨트롤 -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#mycarousel2" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mycarousel2" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="container my-4">
+    <h3>모달창</h3>
+    <!-- Modal : 팝업창과 동일한 기능을 가지고 있는 영역, 실제로는 현재 페이지의 일부분이지만 팝업창처럼 보이도록 디자인된 영역 -->
+    <!-- 보통 모달창 영역을 출력하기 위한 버튼과 실제 화면을 보여주기 위한 div 영역으로 나누어 짐 -->
+    <!-- button 태그에 사용자 속성인 data-bs-toggle="modal", data-bs-target="#실제보여줄 영역의 id값"을 설정 -->
+    <!-- div 태그에 .modal 클래스를 사용하고, id값을 설정함 -->
+    <!-- 자식 태그로 div 태그를 사용하고 .modal-dialog 클래스를 사용함 -->
+    <!-- modal-dialog의 자식 태그로 div 태그를 사용하고, .modal-content 클래스를 사용함 -->
+    <!-- modal-content의 자식 태그로 3개(header, body, footer)의 div 태그를 사용함 -->
+
+    <!-- header -->
+    <!-- 모달창의 제목 부분으로 사용됨 -->
+    <!-- div 태그를 사용하고, .modal-header 클래스를 사용함 -->
+    <!-- 자식 태그로 다른 태그를 사용하면 됨 -->
+    <!-- 보통 h3, h4 태그를 사용하고, .modal-header 클래스를 적용함 -->
+    <!-- 나머지 필요한 내용을 p 태그를 사용 -->
+
+    <!-- body -->
+    <!-- 모달창에서 표현할 내용이 들어가는 영역 -->
+    <!-- div 태그를 사용하고, .modal-body 클래스를 사용함 -->
+    <!-- body 부분에 필요한 태그를 사용하면 됨 -->
+
+    <!-- footer -->
+    <!-- 모달창에서 마지막에 들어가는 영역으로 보통 버튼을 배치함 -->
+    <!-- div 태그를 사용하고, .modal-footer 클래스를 사용함 -->
+    <!-- 닫기 버튼을 사용 시 button 태그를 사용하고 사용자 속성 data-bs-dismiss="modal" 을 설정함 -->
+
+    <!-- 최상위 부모인 div 에 .fade 클래스 추가 시 애니메이션이 추가됨 -->
+
+    <div>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mymodal">클릭 시 모달창 열기</button>
+
+      <div class="modal fade" id="mymodal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">모달창의 제목</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>모달창의 내용 부분</p>
+              <p>입력하고 싶은 내용을 입력하면 됨</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <h4>모달창 사이즈, 전체 크기 모달창, 화면 중앙 표시</h4>
+    <!-- modal-dialog 에 .modal-sm, .modal-lg, modal-xl 를 추가하여 사용 -->
+    <!-- 전체 크기의 모달창은 modal-dialog에 .modal-fullscreen 클래스를 추가하여 사용 -->
+    <!-- 전체 크기 모달창 사용 시 반응형 웹을 적용할 수 있음 -->
+    <!-- .modal-fullscreen-크기-down을 사용, 크기는 sm, md, lg, xl, xxl 이 있음 -->
+    <!-- modal-dialog에 .modal-dialog-centered 클래스 추가 시 화면 중앙에 표시되는 모달창이 출력됨 -->
+
+    <div>
+      <div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal-sm">작은 크기 모달창</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal-normal">기본 크기 모달창</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal-lg">큰 크기 모달창</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal-xl">더 큰 크기 모달창</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal-full">전체 크기 모달창</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal-center">화면 중앙 표시</button>
+      </div>
+
+      <div class="modal fade" id="myModal-sm">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">작은 모달창 제목</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>모달창의 내용</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal-normal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">기본 모달창</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>모달창의 내용</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal-lg">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">큰 모달창</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>모달창의 내용</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal-xl">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">더 큰 모달창</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>모달창의 내용</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal-full">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">전체 화면 모달창</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>모달창의 내용</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal-center">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">중앙 출력 모달창 제목</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p>모달창의 내용</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <h4>모달창 스크롤</h4>
+    <!-- modal-dialog 에 .modal-dialog-scrollable 추가 시 모달창 내에서 스크롤이 가능함 -->
+    
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal-noscroll">스크롤 미지원</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal-scroll">스크롤 지원</button>
+
+    <div class="modal fade" id="myModal-noscroll">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">스크롤이 없는 모달창</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p>가난한 벌레는 같이 어머님, 이제 있습니다. 아스라히 새워 덮어 있습니다. 새워 이름과, 릴케 가득 잔디가 내일 겨울이 잠, 봅니다. 위에 피어나듯이 이런 봅니다. 이네들은 가득 밤이 별이 딴은 없이 새워 있습니다.</p>
+            <p>쉬이 어머니 사람들의 딴은 위에 하나에 이국 있습니다. 남은 차 멀듯이, 오는 어머니, 이 거외다. 노루, 딴은 아무 별이 사람들의 부끄러운 묻힌 많은 벌레는 계십니다. 새겨지는 어머니, 가득 잔디가 노새, 청춘이 그러나 북간도에 다하지 있습니다. 시인의 노루, 딴은 쓸쓸함과 별들을 흙으로 소녀들의 차 듯합니다. 청춘이 쓸쓸함과 못 슬퍼하는 묻힌 아무 있습니다. 이름과 써 벌레는 듯합니다.</p>
+
+            <p>한 사람들의 그러나 파란 둘 시인의 이런 시와 까닭입니다. 헤는 무덤 애기 토끼, 내 봅니다. 가을로 걱정도 무덤 가득 있습니다. 별 하나에 별 위에 소학교 헤일 봄이 너무나 잠, 있습니다. 아무 가을 별 노루, 파란 슬퍼하는 노새, 계십니다.</p>
+
+            <p>추억과 위에 비둘기, 봅니다. 이런 그러나 묻힌 어머님, 별이 계집애들의 어머니 비둘기, 너무나 거외다. 않은 당신은 다 추억과 내 풀이 오면 시와 이름과 봅니다. 하나의 하나에 어머니 없이 듯합니다. 이런 그리고 쓸쓸함과 하나에 흙으로 같이 별 나는 봅니다. 자랑처럼 어머니 하나에 이름자 내 된 토끼, 노루, 별을 있습니다. 하나의 별 별들을 책상을 이름과 이런 내 같이 피어나듯이 봅니다.</p>
+
+            <p>밤을 것은 언덕 강아지, 옥 별 아무 딴은 거외다. 아무 별 이런 까닭입니다. 비둘기, 무성할 나의 없이 마디씩 그러나 속의 아직 차 까닭입니다. 지나가는 시인의 없이 이름과, 이름과, 버리었습니다. 릴케 청춘이 경, 어머님, 슬퍼하는 밤이 봅니다. 옥 말 이름과 쉬이 언덕 사랑과 봅니다. 멀듯이, 계집애들의 다하지 불러 밤이 하나에 까닭입니다.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="myModal-scroll">
+      <div class="modal-dialog modal-sm modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">스크롤이 있는 모달창</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p>가난한 벌레는 같이 어머님, 이제 있습니다. 아스라히 새워 덮어 있습니다. 새워 이름과, 릴케 가득 잔디가 내일 겨울이 잠, 봅니다. 위에 피어나듯이 이런 봅니다. 이네들은 가득 밤이 별이 딴은 없이 새워 있습니다.</p>
+            <p>쉬이 어머니 사람들의 딴은 위에 하나에 이국 있습니다. 남은 차 멀듯이, 오는 어머니, 이 거외다. 노루, 딴은 아무 별이 사람들의 부끄러운 묻힌 많은 벌레는 계십니다. 새겨지는 어머니, 가득 잔디가 노새, 청춘이 그러나 북간도에 다하지 있습니다. 시인의 노루, 딴은 쓸쓸함과 별들을 흙으로 소녀들의 차 듯합니다. 청춘이 쓸쓸함과 못 슬퍼하는 묻힌 아무 있습니다. 이름과 써 벌레는 듯합니다.</p>
+
+            <p>한 사람들의 그러나 파란 둘 시인의 이런 시와 까닭입니다. 헤는 무덤 애기 토끼, 내 봅니다. 가을로 걱정도 무덤 가득 있습니다. 별 하나에 별 위에 소학교 헤일 봄이 너무나 잠, 있습니다. 아무 가을 별 노루, 파란 슬퍼하는 노새, 계십니다.</p>
+
+            <p>추억과 위에 비둘기, 봅니다. 이런 그러나 묻힌 어머님, 별이 계집애들의 어머니 비둘기, 너무나 거외다. 않은 당신은 다 추억과 내 풀이 오면 시와 이름과 봅니다. 하나의 하나에 어머니 없이 듯합니다. 이런 그리고 쓸쓸함과 하나에 흙으로 같이 별 나는 봅니다. 자랑처럼 어머니 하나에 이름자 내 된 토끼, 노루, 별을 있습니다. 하나의 별 별들을 책상을 이름과 이런 내 같이 피어나듯이 봅니다.</p>
+
+            <p>밤을 것은 언덕 강아지, 옥 별 아무 딴은 거외다. 아무 별 이런 까닭입니다. 비둘기, 무성할 나의 없이 마디씩 그러나 속의 아직 차 까닭입니다. 지나가는 시인의 없이 이름과, 이름과, 버리었습니다. 릴케 청춘이 경, 어머님, 슬퍼하는 밤이 봅니다. 옥 말 이름과 쉬이 언덕 사랑과 봅니다. 멀듯이, 계집애들의 다하지 불러 밤이 하나에 까닭입니다.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
