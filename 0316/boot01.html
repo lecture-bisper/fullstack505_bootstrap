@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부트스트랩 6일차 1번</title>
+
+  <link rel="stylesheet" href="../resource/css/bootstrap.css">
+  <script src="../resource/js/bootstrap.bundle.js"></script>
+
+</head>
+<body>
+  <div class="container my-4">
+    <h3>card</h3>
+    <!-- card : 문자나 이미지를 사용 시 영역을 표시하기 위해서 사용 -->
+    <!-- 부모인 div에 .card 클래스를 사용함 -->
+    <!-- 자식 태그로 3가지 형태를 사용함 -->
+
+    <!-- header -->
+    <!-- 부모 태그로 div를 사용하고 .card-header 클래스를 사용함 -->
+
+    <!-- body -->
+    <!-- 부모 태그로 div를 사용하고 .card-body 클래스를 사용함 -->
+
+    <!-- footer -->
+    <!-- 부모 태그로 div 태그를 사용하고 .card-footer 클래스를 사용함 -->
+
+    <!-- header, body, footer에서 제목 사용 시 .card-title 클래스를 사용하고, 일반 텍스트 사용 시 .card-text를 사용하며, 링크 사용 시 .card-link 클래스를 사용함 -->
+
+    <!-- 부모 태그에 bg-테마컬러를 사용 시 전체 배경에 테마 컬러를 사용할 수 있음 -->
+    <!-- 이미지 사용 시 card-body 와 같은 등급으로 위에나 아래에 img 태그를 사용하고 .card-img-top, .card-img-bottom 클래스를 사용하여 표현함 -->
+    <!-- 이미지 사용 시 이미지에 오버레이로 문자를 표현 시 img와 같은 등급으로 div 태그를 사용하고, .card-img-overlay 클래스를 사용함 -->
+
+    <br>
+    <div>
+      <h4>기본 card</h4>
+
+      <div class="card">
+        <div class="card-body">기본 카드 사용</div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header">기본 카드 header</div>
+        <div class="card-body">기본 카드 body</div>
+        <div class="card-footer">기본 카드 footer</div>
+      </div>
+    </div>
+
+    <br>
+
+    <div>
+      <h4>card 색상 사용</h4>
+
+      <div class="card my-2">
+        <div class="card-body">basic</div>
+      </div>
+      <div class="card bg-primary my-2 text-white">
+        <div class="card-body">primary</div>
+      </div>
+      <div class="card bg-secondary my-2 text-white">
+        <div class="card-body">secondary</div>
+      </div>
+      <div class="card bg-success my-2 text-white">
+        <div class="card-body">success</div>
+      </div>
+      <div class="card bg-info my-2">
+        <div class="card-body">info</div>
+      </div>
+      <div class="card bg-warning my-2">
+        <div class="card-body">warning</div>
+      </div>
+      <div class="card bg-danger my-2 text-white">
+        <div class="card-body">danger</div>
+      </div>
+      <div class="card bg-light my-2">
+        <div class="card-body">light</div>
+      </div>
+      <div class="card bg-dark my-2 text-white">
+        <div class="card-body">dark</div>
+      </div>
+    </div>
+
+    <br>
+
+    <div>
+      <h4>제목, 링크, 텍스트</h4>
+
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">카드 제목</h4>
+          <p class="card-text">일반 문자를 사용 시 card-text 클래스 사용</p>
+          <a href="#" class="card-link">링크 사용 시 card-link 클래스 사용</a>
+          <a href="#" class="btn btn-primary card-link">버튼 모양으로 사용 시 </a>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div>
+      <h4>card에 이미지 사용</h4>
+
+      <div class="card my-2" style="width: 400px">
+        <img src="../resource/images/001.jpg" alt="" class="card-img-top w-100">
+        <div class="card-body">
+          <h4 class="card-title">붱철</h4>
+          <p class="card-text">EBS의 프로그램 중 하나에 출연하는 등장인물</p>
+          <a href="#" class="card-link btn btn-outline-primary">자세히...</a>
+        </div>
+      </div>
+      <div class="card my-2" style="width: 400px">
+        <div class="card-body">
+          <h4 class="card-title">펭수</h4>
+          <p class="card-text">EBS의 프로그램 중 하나에 출연하는 등장인물</p>
+          <a href="#" class="card-link btn btn-outline-primary">자세히...</a>
+        </div>
+        <img src="../resource/images/002.jpg" alt="" class="card-img-bottom w-100">
+      </div>
+    </div>
+
+    <br>
+
+    <div>
+      <h4>overlay 사용</h4>
+
+      <div class="card" style="width:400px">
+        <img src="../resource/images/003.jpg" alt="" class="card-img-top w-100">
+        <div class="card-img-overlay text-white">
+          <h4 class="card-title">붱철</h4>
+          <p class="card-text">EBS의 프로그램 중 하나에 출연하는 등장인물</p>
+          <a href="#" class="card-link btn btn-outline-primary">자세히...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
